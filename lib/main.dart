@@ -77,20 +77,23 @@ class BigCard extends StatelessWidget {
       color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              pair.first,
-              style: style_first,
-              semanticsLabel: pair.first,
-            ),
-            Text(
-              pair.second,
-              style: style_second,
-              semanticsLabel: pair.second,
-            )
-          ]
+        child: AnimatedSize(
+          duration: Duration(milliseconds: 200),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                pair.first,
+                style: style_first,
+                semanticsLabel: pair.first,
+              ),
+              Text(
+                pair.second,
+                style: style_second,
+                semanticsLabel: pair.second,
+              )
+            ]
+          ),
         ),
       ),
     );
